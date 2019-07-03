@@ -1,4 +1,40 @@
 body {
-	background-color: orange;
+	background-color: lightgrey;
 }
 
+#tomagotchi-activities {
+	display: inline-block;
+	position: fixed;
+	top: 20px;
+	right: 0;
+	border: 1px solid white;
+	height: 100px;
+	width: 300px;
+}
+
+#play {
+	display: inline-block;
+	background-color: red;
+	padding: 0;
+	margin: 0 -3px 0 0;
+	height: 100px;
+	width: 100px;
+}
+
+#food {
+	display: inline-block;
+	background-color: orange;
+	padding: 0;
+	margin: 0 -3px 0 0;
+	height: 100px;
+	width: 100px;
+}
+
+#lights {
+	display: inline-block;
+	background-color: black;
+	padding: 0;
+	margin: 0 -3px 0 0;
+	height: 100px;
+	width: 100px;
+}
