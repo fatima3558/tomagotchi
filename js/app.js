@@ -1,31 +1,38 @@
 console.log("tomagotchi");
 
-const game = {
+const game = {	
+	pet: {},
 	createTomagotchi() {
-		const pet = new Tomagotchi;
+		const phoenix = new Tomagotchi;
 		const name = prompt("Name your Tomagotchi!");
-		pet.name = name;
-		// console.log(pet);
+		phoenix.name = name;
 		// console.log(pet.name);
-		$('#name').text(pet.name);
-		//start timer
+		$('#name').text(phoenix.name);
+		this.pet = phoenix;
+		this.startTimer();
 	},
 
 	startTimer() {
-		//pause button
+		console.log("timer works");
+		const age = setInterval(() =>{
+			this.pet.age++;
+			$('#age').text(`${this.pet.name} is ${this.pet.age} seconds old!`);
+		}, 1000)
+		
 	},
 
-	increaseBoredom() {
-		//increase by 1 every 10 min
+	getBored() {
+
 	},
 
-	increaseHunger() {
-		//increase by 1 every 20 min
+	getHungry() {
+
 	},
 
-	increaseSleepiness() {
-		//Increase by 1 every 30 min
+	getSleepy() {
+
 	}
+
 }
 
 game.createTomagotchi()

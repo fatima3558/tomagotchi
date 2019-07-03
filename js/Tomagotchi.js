@@ -6,9 +6,10 @@ class Tomagotchi {
 		this.hunger = 0
 		this.sleepiness = 0
 		this.boredom = 0
+		this.age = 0
 		this.timesBorn = 0
 	}
-
+	//--------Tomagotchi LifeStages-------------------
 	becomeEgg() {
 		//after x minutes, become baby
 	}
@@ -34,6 +35,18 @@ class Tomagotchi {
 		//display time of death
 	}
 
+	//---------------Tomagotchi Bodily Functions------
+	play() {
+
+	}
+
+	eat() {
+
+	}
+
+	sleep() {
+
+	}
 
 }
 
