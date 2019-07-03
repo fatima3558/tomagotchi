@@ -36,11 +36,11 @@ class Tomagotchi {
 	}
 
 	eatFood() {
-		this.hunger -=2
+		this.hunger -=2;
 	}
 
 	sleepLots() {
-		this.sleepiness -= 5
+		this.sleepiness -= 5;
 	}
 
 }
