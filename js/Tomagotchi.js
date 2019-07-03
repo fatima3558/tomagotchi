@@ -3,10 +3,10 @@ console.log("tomagotchi class");
 class Tomagotchi {
 	constructor(name) {
 		this.name = name
+		this.boredom = 0
 		this.hunger = 0
 		this.sleepiness = 0
-		this.boredom = 0
-		this.age = 0
+		this.age = 1
 		this.timesBorn = 0
 	}
 	//--------Tomagotchi LifeStages-------------------
