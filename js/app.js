@@ -62,6 +62,8 @@ const game = {
 
 	},
 
+	//------------Interact with Tomagotchi------------
+
 	playWithPet() {
 
 	}
@@ -71,8 +73,11 @@ const game = {
 	},
 
 	turnOffLights() {
-		
+
 	}
+
+	//---------- Tomagotchi evolutions------------
+
 
 
 
