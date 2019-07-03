@@ -1,7 +1,7 @@
 console.log("tomagotchi class");
 
 class Tomagotchi {
-	constructor() {
+	constructor(name) {
 		this.name = name
 		this.hunger = 0
 		this.sleepiness = 0
@@ -9,7 +9,7 @@ class Tomagotchi {
 		this.timesBorn = 0
 	}
 
-	instEgg() {
+	becomeEgg() {
 		//after x minutes, become baby
 	}
 
@@ -33,5 +33,7 @@ class Tomagotchi {
 		//if hunger OR boredom OR sleepiness hits 10, stop timer
 		//display time of death
 	}
+
+
 }
 
