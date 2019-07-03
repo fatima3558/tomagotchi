@@ -50,7 +50,10 @@ const game = {
 			if(this.pet.age % 1 === 0){
 				this.pet.sleepiness++;
 				$('#sleepy').text(`${this.pet.sleepiness}`);
-				this.turnOffLights();
+				if($(this.target).attr('id', 'lights') && this.pet.sleepiness > 5 && this.isPlaying === false && this.isEating === false) {
+						this.pet.sleepLots();
+					}
+
 			};
 
 			if(this.pet.boredom === 10 || this.pet.hunger === 10 || this.pet.sleepiness === 10) {
@@ -78,11 +81,7 @@ const game = {
 
 	turnOffLights(e) {
 		// console.log(`turn off lights is working`);
-		if($(this.target).attr('id') === 'lights' && this.pet.sleepiness > 5 && this.isPlaying === false && this.isEating === false) {
-			console.log(`this is working`);
-			console.log(this);
-				this.pet.sleepLots();
-		}
+
 		
 	}
 
