@@ -2,7 +2,9 @@ console.log("tomagotchi");
 
 $('#tomagotchi-activities').on('click', (e) =>{
 	console.log(`clicked ${$(e.target).attr('id')}`);
-})
+
+	return e.target
+});
 
 const game = {	
 	pet: {},
@@ -59,6 +61,20 @@ const game = {
 		}, 1000);
 
 	},
+
+	playWithPet() {
+
+	}
+
+	feedPet() {
+
+	},
+
+	turnOffLights() {
+		
+	}
+
+
 
 }
 
