@@ -32,28 +32,23 @@ const game = {
 
 			//boredom should increase every 10 minutes
 			//Will increase by 1 seconds to build
-			if(this.pet.age % 1 === 0){
+			if(this.pet.age % 3 === 0){
 				this.pet.boredom++;
 
 			};
 
 			//hunger should increase every 20 minutes
 			//will increase by 2 seconds to build
-			if(this.pet.age % 2 === 0){
+			if(this.pet.age % 5 === 0){
 				this.pet.hunger++;
 			};
 
 			//sleepiness should increase every 30 minutes
 			//will increase by 3 seconds to build
-			if(this.pet.age % 3 === 0){
+			if(this.pet.age % 7 === 0){
 				this.pet.sleepiness++;
 			};
 
-
-
-			
-
-			
 		}, 1000);
 
 	},
@@ -68,9 +63,30 @@ const game = {
 	die() {
 		console.log('it died!');
 		$('#age').text(`Sadness! ${this.pet.name} grew to the ripe old age of ${this.pet.age} seconds. RIP.`)
-	}
+	},
 
-	//---------- Tomagotchi evolutions------------
+//---------------- Tomagotchi evolutions------------
+	becomeEgg() {
+		while( this.pet.age < 20) {
+			$
+		}
+	},
+
+	becomeBaby() {
+		//after x minutes, become Child
+	},
+
+	becomeChild() {
+		//after x minutes, become Adult
+	},
+
+	becomeAdult() {
+		//after x minutes, be Reborn
+	},
+
+	beReborn() {
+		//burn up, be reborn from ashes as baby
+	}
 
 }
 
