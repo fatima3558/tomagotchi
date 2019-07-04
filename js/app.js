@@ -18,16 +18,23 @@ const game = {
 		this.updateStats() // print initial values
 
 		const age = setInterval(() =>{
+			if(this.pet.boredom === 10 || this.pet.hunger === 10 || this.pet.sleepiness === 10) {
+				this.updateStats();
+				this.pet.isDead = true;
+				this.die();
+				clearInterval(age);
+
+			} else {
+				this.updateStats()
+			}
+
 			this.pet.age++;
 
 			//boredom should increase every 10 minutes
 			//Will increase by 1 seconds to build
 			if(this.pet.age % 1 === 0){
 				this.pet.boredom++;
-				$('#bored').text(`${this.pet.boredom}`);
-				if($(this.target).attr('id', 'play') && this.pet.boredom > 3 && this.isEating === false && this.isSleeping === false) {
-					this.pet.haveFun();
-				}
+
 			};
 
 			//hunger should increase every 20 minutes
@@ -42,14 +49,11 @@ const game = {
 				this.pet.sleepiness++;
 			};
 
-			if( this.pet.isDead) {
-				clearInterval(age);
-				$('#age').text(`Sadness! ${this.pet.name} grew to the ripe old age of ${this.pet.age} seconds. RIP.`)
-			}
 
 
-			this.updateStats()
-		
+			
+
+			
 		}, 1000);
 
 	},
@@ -61,19 +65,10 @@ const game = {
 		$('#age').text(`${this.pet.name} is ${this.pet.age} seconds old!`);
 	},
 
-	//------------Interact with Tomagotchi------------
-
-	playWithPet() {
-		//if boredom level is more than 3 AND if isEating or isSleeping are false, allow haveFun
-		//switch isPlaying to true for some time
-		this.pet.haveFun();
-		//switch isPlaying to false
-	},
-
-	feedPet() {
-		//if hunger level is more than 2 AND if isPlaying and isSleeping are false, allow eatFood
-		this.pet.eatFood();
-	},
+	die() {
+		console.log('it died!');
+		$('#age').text(`Sadness! ${this.pet.name} grew to the ripe old age of ${this.pet.age} seconds. RIP.`)
+	}
 
 	//---------- Tomagotchi evolutions------------
 
@@ -96,4 +91,4 @@ $('#tomagotchi-activities').on('click', (e) =>{
 	}
 });
 
-game.createTomagotchi()
+game.createTomagotchi() 
