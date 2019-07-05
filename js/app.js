@@ -8,16 +8,19 @@ const game = {
 		const phoenix = new Tomagotchi;
 		const name = prompt("Name your Tomagotchi!");
 		phoenix.name = name;
-		// console.log(pet.name);
 		$('#name').text(phoenix.name);
 		this.pet = phoenix;
+		$('#baby').hide();
+		$('#child').hide();
+		$('#adult').hide();
 		this.startTimer();
 	},
 
 	startTimer() {
 		this.updateStats() // print initial values
-
 		const age = setInterval(() =>{
+	//---------- pet age to update stats unless pet dies-------
+			this.pet.age++;
 			if(this.pet.boredom === 10 || this.pet.hunger === 10 || this.pet.sleepiness === 10) {
 				this.updateStats();
 				this.pet.isDead = true;
@@ -28,26 +31,43 @@ const game = {
 				this.updateStats()
 			}
 
-			this.pet.age++;
+	//--------- boredom, hunger, sleepiness increases--------
+			// //boredom should increase every 10 minutes
+			// if(this.pet.age % 3 === 0){
+			// 	this.pet.boredom++;
 
-			//boredom should increase every 10 minutes
-			//Will increase by 1 seconds to build
-			if(this.pet.age % 3 === 0){
-				this.pet.boredom++;
-
-			};
-
-			//hunger should increase every 20 minutes
-			//will increase by 2 seconds to build
-			if(this.pet.age % 5 === 0){
-				this.pet.hunger++;
-			};
-
-			//sleepiness should increase every 30 minutes
-			//will increase by 3 seconds to build
-			if(this.pet.age % 7 === 0){
-				this.pet.sleepiness++;
-			};
+			// };
+			// //hunger should increase every 20 minutes
+			// if(this.pet.age % 5 === 0){
+			// 	this.pet.hunger++;
+			// };
+			// //sleepiness should increase every 30 minutes
+			// if(this.pet.age % 7 === 0){
+			// 	this.pet.sleepiness++;
+			// };
+	//-----------when to evolve-------------
+			console.log(this.pet);
+			if (this.pet.timesReborn === 0 && this.pet.age > 15 && this.pet.age < 30) {
+				this.becomeBaby();			
+			}
+			else if (this.pet.timesReborn > 0 && this.pet.age < 30) {
+				this.becomeBaby();
+			}
+			else if (this.pet.age > 30 && this.pet.age < 45) {
+				this.becomeChild();
+			}
+			else if (this.pet.age > 45 && this.pet.age < 60) {
+				this.becomeAdult()
+			}
+			else if (this.pet.age === 15 || this.pet.age === 30 || this.pet.age === 45) {
+				this.growUp();
+			}
+			else if (age === 60) {
+				console.log('time logging at 60 seconds');
+				this.growUp();
+				this.pet.emergeFromAshes();
+				this.becomeBaby();
+			}
 
 		}, 1000);
 
@@ -57,7 +77,8 @@ const game = {
 		$('#sleepy').text(`${this.pet.sleepiness}`);
 		$('#hungry').text(`${this.pet.hunger}`);
 		$('#bored').text(`${this.pet.boredom}`);
-		$('#age').text(`${this.pet.name} is ${this.pet.age} seconds old!`);
+		$('#reborn').text(`${this.pet.name} is on life number ${this.pet.timesReborn + 1}!`)
+		$('#age').text(`${this.pet.name} is ${(this.pet.age)} seconds old!`);
 	},
 
 	die() {
@@ -66,29 +87,33 @@ const game = {
 	},
 
 //---------------- Tomagotchi evolutions------------
-	becomeEgg() {
-		while( this.pet.age < 20) {
-			$
-		}
-	},
-
 	becomeBaby() {
-		//after x minutes, become Child
+		$('#smoke').show();
+		$('#baby').show();
+		//do animations in css
 	},
 
 	becomeChild() {
-		//after x minutes, become Adult
+		$('#smoke').show();
+		$('#child').show();
 	},
 
 	becomeAdult() {
-		//after x minutes, be Reborn
+		$('#smoke').show();
+		$('#adult').show();
 	},
 
-	beReborn() {
-		//burn up, be reborn from ashes as baby
+	growUp() {
+		$('#egg').hide();
+		$('#baby').hide();
+		$('#child').hide();
+		$('#adult').hide();
+		$('#smoke').hide()
+		// $('#img-container').css({
+			// "background-image": "url('../images/Fire.jpg')"});
 	}
 
-}
+};
 
 $('#tomagotchi-activities').on('click', (e) =>{
 	const $target = $(e.target);
