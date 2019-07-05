@@ -46,7 +46,6 @@ const game = {
 			// 	this.pet.sleepiness++;
 			// };
 	//-----------when to evolve-------------
-			console.log(this.pet);
 			if (this.pet.timesReborn === 0 && this.pet.age > 15 && this.pet.age < 30) {
 				this.becomeBaby();			
 			}
@@ -57,16 +56,15 @@ const game = {
 				this.becomeChild();
 			}
 			else if (this.pet.age > 45 && this.pet.age < 60) {
-				this.becomeAdult()
+				this.becomeAdult();
 			}
 			else if (this.pet.age === 15 || this.pet.age === 30 || this.pet.age === 45) {
 				this.growUp();
 			}
-			else if (age === 60) {
+			else if (this.pet.age === 60) {
 				console.log('time logging at 60 seconds');
 				this.growUp();
 				this.pet.emergeFromAshes();
-				this.becomeBaby();
 			}
 
 		}, 1000);
