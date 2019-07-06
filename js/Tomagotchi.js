@@ -36,7 +36,6 @@ class Tomagotchi {
 	}
 
 	emergeFromAshes() {
-		console.log('emerge from ashes works');
 		this.timesReborn += 1;
 		this.age = 0;
 	}

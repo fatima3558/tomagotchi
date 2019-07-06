@@ -62,7 +62,6 @@ const game = {
 				this.growUp();
 			}
 			else if (this.pet.age === 60) {
-				console.log('time logging at 60 seconds');
 				this.growUp();
 				this.pet.emergeFromAshes();
 			}

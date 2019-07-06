@@ -45,6 +45,7 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 100%;
+	text-align: center;
 }
 
 #fire {
@@ -58,8 +59,24 @@ body {
 }
 
 .pet-img {
-	display: relative;
 	z-index: 5;
+	position: absolute;
+	bottom: -100px;
+}
+
+@keyframes eggWiggle {
+	0%	{transform: rotate(2deg);}
+	20%	{transform: rotate(-2deg);}
+	40% {transform: rotate(2deg);}
+	60% {transform: rotate(-2deg);}
+	80% {transform: rotate(-2deg);}
+}
+
+#egg {
+	animation-name: eggWiggle;
+	animation-duration: 2s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
 }
 
 
