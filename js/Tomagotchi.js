@@ -6,7 +6,7 @@ class Tomagotchi {
 		this.boredom = 0
 		this.hunger = 0
 		this.sleepiness = 0
-		this.age = 0
+		this.age = 28
 		this.timesReborn = 0
 
 		this.isPlaying = false

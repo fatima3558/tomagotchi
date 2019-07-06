@@ -64,21 +64,55 @@ body {
 	bottom: -100px;
 }
 
-@keyframes eggWiggle {
-	0%	{transform: rotate(2deg);}
-	20%	{transform: rotate(-2deg);}
-	40% {transform: rotate(2deg);}
-	60% {transform: rotate(-2deg);}
-	80% {transform: rotate(-2deg);}
+@keyframes wiggle {
+	0%	{transform: rotate(4deg);}
+	20%	{transform: rotate(-4deg);}
+	40% {transform: rotate(4deg);}
+	60% {transform: rotate(-4deg);}
+	80% {transform: rotate(-4deg);}
 }
 
 #egg {
-	animation-name: eggWiggle;
+	animation-name: wiggle;
 	animation-duration: 2s;
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
 }
 
+@keyframes waddle {
+	0%	{transform: rotate(2deg); margin-left: 0; margin-bottom: 0; }
+	12.5% {transform: rotate(0deg); margin-left: 250px; margin-bottom: 100px;}
+	25% {transform: rotate(-2deg); margin-left: 300px; margin-bottom: 0;}
+	37.5% {transform: rotate(0deg); margin-left: 100px; margin-bottom: 100px;}
+	50% {transform: rotate(2deg); margin-left: 0; margin-bottom: 0;}
+	62.5% {transform: rotate(0deg); margin-left: -250px; margin-bottom: 100px;}
+	75% {transform: rotate(-2deg); margin-left: -300px; margin-bottom: 0;}
+	87.5% {transform: rotate(0deg); margin-left: -100px; margin-bottom: 100px;}
+}
+
+#baby {
+	animation-name: waddle;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	transition-timing-function: ease-in-out;
+}
+
+@keyframes simpleFlight {
+	0%		{margin-left: -300px; margin-bottom: 0;}
+	25%		{margin-left: 0; margin-bottom: 100px;}
+	50% 	{margin-left: 300px; margin-bottom: 0;}
+	75% 	{transform: rotateY(180deg);margin-left: 0; margin-bottom: 100px;}
+	100%	{ margin-left: -300px; margin-bottom: 0;}
+}
+
+#child {
+	margin-bottom: 70px;
+	animation-name: simpleFlight;
+	animation-duration: 7.5s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	transition-timing-function: ease-in-out;
+}
 
 
 
