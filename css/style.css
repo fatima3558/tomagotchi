@@ -99,9 +99,9 @@ body {
 
 @keyframes simpleFlight {
 	0%		{transform: scaleX(1); margin-left: -500px; margin-bottom: 0;}
-	25%		{transform: scaleX(1); margin-left: -200; margin-bottom: 100px;}
+	25%		{transform: scaleX(1); margin-bottom: 100px;}
 	50% 	{transform: scaleX(-1); margin-left: 100px; margin-bottom: 0;}
-	75% 	{transform: scaleX(-1); margin-left: -200; margin-bottom: 100px;}
+	75% 	{transform: scaleX(-1); margin-bottom: 100px;}
 	100%	{transform: scaleX(1); margin-left: -500px; margin-bottom: 0;}
 }
 
@@ -114,8 +114,25 @@ body {
 	transition-timing-function: ease-in-out;
 }
 
+@keyframes swooshyFlight {
+	0%		{transform: scaleX(1); margin-left: -500px; margin-bottom: 0;}
+	12.5%	{margin-bottom: -100px;}
+	25%		{transform: scaleX(1); margin-bottom: -100px; margin-bottom: 0;}
+	37.5%	{margin-bottom: 100px;}
+	50% 	{transform: scaleX(-1); margin-left: 200px; margin-bottom: 0;}
+	62.5%	{margin-bottom: -100px;}
+	75% 	{transform: scaleX(-1); margin-bottom: 0;}
+	87.5%	{margin-bottom: 100px;}
+	100%	{transform: scaleX(1); margin-left: -500px; margin-bottom: 0;}
+}
 
-
-
+#adult {
+	margin-bottom: -50px;
+	animation-name: swooshyFlight;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	transition-timing-function: ease-in-out;
+}
 
 
