@@ -32,19 +32,19 @@ const game = {
 			}
 
 	//--------- boredom, hunger, sleepiness increases--------
-			// //boredom should increase every 10 minutes
-			// if(this.pet.age % 3 === 0){
-			// 	this.pet.boredom++;
+			//boredom should increase every 10 minutes
+			if(this.pet.age % 10 === 0){
+				this.pet.boredom++;
 
-			// };
-			// //hunger should increase every 20 minutes
-			// if(this.pet.age % 5 === 0){
-			// 	this.pet.hunger++;
-			// };
-			// //sleepiness should increase every 30 minutes
-			// if(this.pet.age % 7 === 0){
-			// 	this.pet.sleepiness++;
-			// };
+			};
+			//hunger should increase every 20 minutes
+			if(this.pet.age % 20 === 0){
+				this.pet.hunger++;
+			};
+			//sleepiness should increase every 30 minutes
+			if(this.pet.age % 30 === 0){
+				this.pet.sleepiness++;
+			};
 	//-----------when to evolve-------------
 			if (this.pet.timesReborn === 0 && this.pet.age > 15 && this.pet.age < 30) {
 				this.becomeBaby();			
@@ -79,6 +79,7 @@ const game = {
 	},
 
 	die() {
+		$('.pet-img').css("animation-name, none;")
 		console.log('it died!');
 		$('#age').text(`Sadness! ${this.pet.name} grew to the ripe old age of ${this.pet.age} seconds. RIP.`)
 	},
@@ -105,9 +106,7 @@ const game = {
 		$('#baby').hide();
 		$('#child').hide();
 		$('#adult').hide();
-		$('#smoke').hide()
-		// $('#img-container').css({
-			// "background-image": "url('../images/Fire.jpg')"});
+		$('#smoke').hide();
 	}
 
 };
@@ -130,3 +129,10 @@ $('#tomagotchi-activities').on('click', (e) =>{
 });
 
 game.createTomagotchi() 
+
+/*
+future goals may include:
+-stopping animation when pet dies
+-include more animations/smooth out current animations
+-having activities take a certain amount of time during which no other activities can happen, i.e., cannot be fed while sleeping
+*/
