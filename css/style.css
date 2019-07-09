@@ -2,6 +2,10 @@ body {
 	background-color: lightgrey;
 }
 
+div {
+	color: lightgrey;
+}
+
 #tomagotchi-activities {
 	display: inline-block;
 	position: fixed;

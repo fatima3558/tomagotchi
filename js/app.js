@@ -33,16 +33,16 @@ const game = {
 
 	//--------- boredom, hunger, sleepiness increases--------
 			//boredom should increase every 10 minutes
-			if(this.pet.age % 10 === 0){
+			if(this.pet.age % 2 === 0){
 				this.pet.boredom++;
 
 			};
 			//hunger should increase every 20 minutes
-			if(this.pet.age % 20 === 0){
+			if(this.pet.age % 3 === 0){
 				this.pet.hunger++;
 			};
 			//sleepiness should increase every 30 minutes
-			if(this.pet.age % 30 === 0){
+			if(this.pet.age % 5 === 0){
 				this.pet.sleepiness++;
 			};
 	//-----------when to evolve-------------
@@ -79,7 +79,8 @@ const game = {
 	},
 
 	die() {
-		$('.pet-img').css("animation-name, none;")
+		//to stop animation, will have to add css for animation in jquery and remove it here as well
+		// $('.pet-img').css("animation-name, null;")
 		console.log('it died!');
 		$('#age').text(`Sadness! ${this.pet.name} grew to the ripe old age of ${this.pet.age} seconds. RIP.`)
 	},
@@ -88,7 +89,6 @@ const game = {
 	becomeBaby() {
 		$('#smoke').show();
 		$('#baby').show();
-		//do animations in css
 	},
 
 	becomeChild() {
@@ -136,3 +136,4 @@ future goals may include:
 -include more animations/smooth out current animations
 -having activities take a certain amount of time during which no other activities can happen, i.e., cannot be fed while sleeping
 */
+
