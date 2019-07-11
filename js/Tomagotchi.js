@@ -13,20 +13,20 @@ class Tomagotchi {
 
 	//---------------Tomagotchi Bodily Functions------
 	haveFun() {
-		if( this.boredom > 3 && this.isEating === false && this.isSleeping === false) {
+		if( this.boredom > 3) {
 			this.boredom -= 3;
 		}
 		
 	}
 
 	eatFood() {
-		if( this.hunger > 2 && this.isPlaying === false && this.isSleeping === false) {
+		if( this.hunger > 2) {
 			this.hunger -=2;
 		}
 	}
 
 	sleepLots() {
-		if( this.sleepiness > 5 && this.isPlaying === false && this.isEating === false) {
+		if( this.sleepiness > 5) {
 			this.sleepiness -= 5;
 		}
 	}
@@ -37,5 +37,4 @@ class Tomagotchi {
 	}
 
 } 
-
 
